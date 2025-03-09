@@ -54,6 +54,7 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 const CancelButton = styled.button`
   background: #ff6b6b;
   width: auto;
@@ -70,14 +71,16 @@ const CancelButton = styled.button`
     background: #776969;
   }
 `;
+
 const BoardContainer = styled.div`
   display: flex;
-
   gap: 16px;
   padding: 16px;
+  height: 100vh;
+  overflow-x: scroll;
   border-radius: 8px;
-  max-width: 100%;
-  overflow: hidden;
+
+
 `;
 
 const Input = styled.input`
