@@ -11,7 +11,9 @@ const Header = () => {
         <HeaderMenu />
         <UserProfile />
       </Container>
-      <Board />
+      <section>
+        <Board />
+      </section>
     </StyledDiv>
   );
 };
@@ -19,6 +21,11 @@ const Header = () => {
 export default Header;
 
 const StyledDiv = styled.div`
+  .section {
+    width: 100%;
+    height: 60px;
+    overflow-x: scroll;
+  }
   background-image: url("https://i.pinimg.com/736x/34/70/aa/3470aacb5d2db158f98dcd458a854a4a.jpg");
   background-size: cover;
   background-repeat: no-repeat;

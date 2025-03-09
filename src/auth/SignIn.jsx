@@ -75,7 +75,7 @@ const SignIn = () => {
               <ActionButtons>
                 <Button onClick={logout}>Да</Button>
                 <Button onClick={() => setIsLogoutModalVisible(false)}>
-                  Не т
+                  Нет
                 </Button>
               </ActionButtons>
             </Modal>

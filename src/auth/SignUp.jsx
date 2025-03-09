@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { signUpRequest } from "../store/thunks/authThunk";
 import { Button, Div, Input, MessageError } from "./SignIn";
 import { FaTrello } from "react-icons/fa";
@@ -77,6 +77,7 @@ const SignUp = () => {
             />
             <MessageError>{errors?.password?.message}</MessageError>
             <Button>Sign Up</Button>
+            <BackLink to={"/"}>Вернуться обратно</BackLink>
           </form>
         </StyledDiv>
       </div>
@@ -85,6 +86,20 @@ const SignUp = () => {
 };
 
 export default SignUp;
+const BackLink = styled(Link)`
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #1b1d52;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 const StyledDiv = styled.div`
   display: flex;

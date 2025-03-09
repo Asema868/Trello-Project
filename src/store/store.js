@@ -49,7 +49,7 @@ const boardSlice = createSlice({
         state.lists.push({
           ...list,
           id: Date.now().toString(),
-          title: `${list.title} (Копия)`,
+          title: `${list.title} `,
         });
         saveState(state);
       }

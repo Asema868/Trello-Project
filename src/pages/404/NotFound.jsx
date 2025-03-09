@@ -1,16 +1,14 @@
 import React from "react";
-import { Link } from "react-router";
-import styled from "styled-components";
+import { Link } from "react-router-dom";
+import styled, { keyframes } from "styled-components"; 
 
 const NotFound = () => {
   return (
     <NotFoundContainer>
       <ErrorCode>404</ErrorCode>
-
       <ErrorMessage>OOPS! PAGE NOT FOUND</ErrorMessage>
       <ErrorMessage>
-        {" "}
-        Sorry, the page you're looking for doesn't exist.{" "}
+        Sorry, the page you're looking for doesn't exist.
       </ErrorMessage>
       <HomeLink to="/">Go to Home</HomeLink>
     </NotFoundContainer>
@@ -18,6 +16,28 @@ const NotFound = () => {
 };
 
 export default NotFound;
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const bounce = keyframes`
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+`;
+
 const NotFoundContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,11 +48,13 @@ const NotFoundContainer = styled.div`
   color: #721c24;
   text-align: center;
   font-family: "Arial", sans-serif;
+  animation: ${fadeIn} 1s ease-in;
 `;
 
 const ErrorCode = styled.h1`
   font-size: 100px;
   margin: 0;
+  animation: ${bounce} 1s;
 `;
 
 const ErrorMessage = styled.h2`
